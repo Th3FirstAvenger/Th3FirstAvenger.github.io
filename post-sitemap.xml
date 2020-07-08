@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://teamshadowdc.github.io/2020/07/08/SSTI/</loc>
+        <lastmod>2020-07-08T16:52:32.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://teamshadowdc.github.io/2020/07/03/Hackeando-con-Docker/</loc>
         <lastmod>2020-07-03T16:52:55.484Z</lastmod>
         <changefreq>weekly</changefreq>
