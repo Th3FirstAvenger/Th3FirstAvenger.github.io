@@ -1,4 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Queremos seguir aprendiendo y compartir nuestra passion por la Ciberseguridad"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>Hackeando con Docker | ShadowDC</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><meta name="generator" content="Hexo 4.2.1"></head><link rel="stylesheet" type="text/css" href="/plugins/prettify/doxy.css"><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">ShadowDC</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">Hackeando con Docker</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2020/07/03/Hackeando-con-Docker/">2020-07-03</a></span><span class="p-category"><i class="fa fa-folder"></i><a href="/categories/Docker-Linux/">Docker, Linux</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><h1><span id="hackeando-con-docker">Hackeando con docker</span><a href="#hackeando-con-docker" class="header-anchor">#</a></h1><h2><span id="introduccion">Introducción</span><a href="#introduccion" class="header-anchor">#</a></h2><p>En este post principalmente voy a mostrar mi configuraciones de docker, la mayoría son sacadas de Docker Hub ya que considero que están muy bien hechas y si nos podemos ahorrar trabajo mucho mejor. Pero si que voy hablar de la docker que he creado para mi, para poder hacer los retos de HackTheBox, TryHackMe, Atenea,…<br>Primero voy a empezar explicando donde utilizo la docker, ya que si alguien le interesa puedo compartir como tengo hecha mi distribución. Así que, si únicamente te interesa como tengo mi docker recomiendo que saltes la primera parte. </p>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        ShadowDC
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            Hackeando con Docker
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h1><span id="hackeando-con-docker">Hackeando con docker</span><a href="#hackeando-con-docker" class="header-anchor">#</a></h1><h2><span id="introduccion">Introducción</span><a href="#introduccion" class="header-anchor">#</a></h2><p>En este post principalmente voy a mostrar mi configuraciones de docker, la mayoría son sacadas de Docker Hub ya que considero que están muy bien hechas y si nos podemos ahorrar trabajo mucho mejor. Pero si que voy hablar de la docker que he creado para mi, para poder hacer los retos de HackTheBox, TryHackMe, Atenea,…<br>Primero voy a empezar explicando donde utilizo la docker, ya que si alguien le interesa puedo compartir como tengo hecha mi distribución. Así que, si únicamente te interesa como tengo mi docker recomiendo que saltes la primera parte. </p>
 <h3><span id="mi-distribucion">Mi distribución</span><a href="#mi-distribucion" class="header-anchor">#</a></h3><p>Personalmente soy una persona que me ha siempre me gustado Linux, así que era muy habitual para mi ir cambiando de distribuciones, me gustaba ver y entender porque eran distintas.<br>Al final he visto que algunas están mas enfocadas en sus respectivos temas, pero no quiero enfocar ese post en compararlas.<br>Primero me gustaría compartir un poco mi experiencia con las distribuciones dedicadas al pentesting.<br>Des de hace un par de años descubrí el mundo de la ciberseguridad me podría gustar, así que empecé a buscar en google como empezar y en todos los sitios me aparecía que tenia que usar Kali Linux, estoy seguro que sabes cual es. Después cuando sabia un poco más me pase a BlackArch ya que había estado con Majaro anteriormente y entendía como funcionaba la distribución de Arch. Y desde hace 1 año he estado trabajando con Parrot OS, personalmente es la que más me ha gustado y más cómodo he podido trabajar. Pero tener un único ordenador y dedicarlo el Pentesting sin verlo, se me llenaba de cosas que solo utilizaba una única vez y a veces solamente lo tenia porque creía que me ayudaría en un CTF. Por suerte soy una persona muy organizada y me gusta tenerlo todo en su sitio, aun así tenia el ordenador lleno. Mi única solución era virtualizar pero mi pc no es suficiente bueno como para tener el host y otra maquina virtualizada corriendo, y que no se congele o le pase algo que no pudiera trabajar cómodamente.<br>Así que al final me decidir hacer un cambio de nuevo. Actualmente estoy trabajando con Arch Linux, configurado con el entorno de bspwm. Mi intención no era tener de nuevo un host pentesting, pero si buscaba algo muy ligero y que menos que Arch linux.<br>Ahora la pregunta seria y, ¿Y como lo hago para dedicarme al pentest?<br>Y aquí el nombre del título. Recientemente aprendí a usar docker y me gusto mucho su funcionamiento así que decidir aprender mas y eso también ha sido uno de los motivos que he ha hecho cambiar de distribución.</p>
 <p>Para quién no conozca docker, aquí os dejo una pequeña idea sacado de la Wikipedia.</p>
 <blockquote>
@@ -60,42 +95,67 @@
 
 
 
-</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">J4ck21</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2020/07/03/Hackeando-con-Docker/">http://teamshadowdc.github.io/2020/07/03/Hackeando-con-Docker/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://teamshadowdc.github.io">J4ck21的博客</a>！</span></div></blockquote></div></article><div class="p-info box"></div><aside id="toc"><div class="toc-title">目录</div><nav><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Hackeando con docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.1.</span> <span class="toc-text">Introducción</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.1.1.</span> <span class="toc-text">Mi distribución</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">2.</span> <span class="toc-text">Mi configuración de docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">Tools</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">Wordlist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">Scripts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">Web shells</span></a></li></ol></li></ol></li></ol></li></ol></nav></aside></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="prev" href="/2020/07/08/SSTI/">&lt; Server-side template injection</a><a class="next" href="/2020/06/29/Tabby/">Tabby Writeup &gt;</a></div><div id="valine-comment"><style type="text/css">.night .v[data-class=v] a { color: #0F9FB4 !important; }
-.night .v[data-class=v] a:hover { color: #216C73 !important; }
-.night .v[data-class=v] li { list-style: inherit; }
-.night .v[data-class=v] .vwrap { border: 1px solid #223441; border-radius: 0; }
-.night .v[data-class=v] .vwrap:hover { box-shadow: 0 0 6px 1px #223441; }
-.night .v[data-class=v] .vbtn { border-radius: 0; background: none; }
-.night .v[data-class=v] .vlist .vcard .vh { border-bottom-color: #293D4E; }
-.night .v[data-class=v] .vwrap .vheader .vinput { border-bottom-color: #223441; }
-.night .v[data-class=v] .vwrap .vheader .vinput:focus { border-bottom-color: #339EB4; }
-.night .v[data-class=v] code, .night .v[data-class=v] pre,.night .v[data-class=v] .vlist .vcard .vhead .vsys { background: #203240 !important; }
-.night .v[data-class=v] code, .night .v[data-class=v] pre { color: #F0F0F0; font-size: 95%; }
-.v[data-class=v] .vcards .vcard .vh {border-bottom-color: #223441; }
-.night .v[data-class=v] .vcards .vcard .vcontent.expand:before {background: linear-gradient(180deg,rgba(38,57,73,.4),rgba(38,57,73,.9));}
-.night .v[data-class=v] .vcards .vcard .vcontent.expand:after {background: rgba(38,57,73,.9)}
-</style><div id="vcomment"></div><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
-var verify = 'false' == true ? true : false;
-var GUEST_INFO = ['nick','mail','link'];
-var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-  return GUEST_INFO.indexOf(item) > -1
-});
-guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
-window.valine = new Valine({
-  el:'#vcomment',
-  notify:notify,
-  verify:verify,
-  appId:'',
-  appKey:'',
-  lang: 'zh-cn',
-  placeholder:'ヾﾉ≧∀≦)o Come on, say something...',
-  avatar:'identicon',
-  guest_info:guest_info,
-  pageSize:'10'
-})</script></div></section><footer><p>Copyright © 2016 - 2020 <a href="/." rel="nofollow">ShadowDC</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/plugins/prettify/prettify.js"></script><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-    search_path = 'search.xml';
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" href="https://github.com/Xunzhuo/hexo-theme-coder" target="_blank" rel="noopener" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
 }
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
