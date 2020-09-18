@@ -1,209 +1,172 @@
 <!DOCTYPE html>
-<html lang=es>
+<html lang="zh">
 <head>
-    <!-- so meta -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Queremos seguir aprendiendo y compartir nuestra passion por la Ciberseguridad">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShadowDC">
-<meta property="og:url" content="http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/index.html">
-<meta property="og:site_name" content="ShadowDC">
-<meta property="og:description" content="Queremos seguir aprendiendo y compartir nuestra passion por la Ciberseguridad">
-<meta property="og:locale" content="es_ES">
-<meta property="article:author" content="Carl000x y J4ck21">
-<meta property="article:tag" content="windows">
-<meta property="article:tag" content=" linux">
-<meta property="article:tag" content=" CVE">
-<meta property="article:tag" content=" vulnerabilidades">
-<meta property="article:tag" content=" seguridad">
-<meta property="article:tag" content=" ciberseguridad">
-<meta property="article:tag" content=" hacking">
-<meta property="article:tag" content=" pentest">
-<meta property="article:tag" content=" pentesting">
-<meta property="article:tag" content=" red team">
-<meta property="article:tag" content=" hacking web">
-<meta property="article:tag" content=" cheat sheet">
-<meta property="article:tag" content=" OSCP">
-<meta property="article:tag" content=" OSCE">
-<meta property="article:tag" content=" pentesters">
-<meta name="twitter:card" content="summary">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        ShadowDC
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
     
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
     
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-          
-        
-    
-    <!-- title -->
-    <title>Category: ffuf</title>
-    <!-- styles -->
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
-    
-      
-<link rel="stylesheet" href="/css/rtl.css">
-
-    
-    <!-- rss -->
-    
-    
 <meta name="generator" content="Hexo 4.2.1"></head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-    <div class="content index py4">
-        
-          <header id="header">
-  <a href="/">
-  
-    
-      <div id="logo" style="background-image: url(/images/logo.png);"></div>
-    
-  
-    <div id="title">
-      <h1>ShadowDC</h1>
-    </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-       
-        <li><a href="/">Inicio</a></li>
-       
-        <li><a href="/about/">Sobre Mi</a></li>
-       
-        <li><a href="/archives/">Articulos</a></li>
-       
-        <li><a href="/apuntes/">Apuntes</a></li>
-       
-        <li><a href="/search/">Buscar</a></li>
-      
-    </ul>
-  </div>
-</header>
-
-        
-        <div id="archive">
-  <ul class="post-list">
-    
-    
-    
-    
-      
-      
-      
-      
-        <h2>2020</h2>
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2020-06-29T11:33:15.000Z" itemprop="datePublished">2020-06-29</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2020/06/29/Tabby/">Tabby Writeup</a>
-    
-
-
-</span>
-      </li>
-    
-  </ul>
-  
-
+<body id="bodyx">
+    <div class="hd logodiv">
+    <img src="/img/male.png" class="logopng" alt="logo">
+    <p class="logot">
+         Title Name 
+         <span class="logo_2"></span>
+        <h3 class="words" style="font-weight: bold;font-family: Georgia;"> 
+            Your Words 
+        </h3>
+    </p>
 </div>
 
+
+<div class="hd">
+    <ol class="breadcrumb">
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
+            <li><a class="ba" href="/about">关于我👀</a></li>
+        
+            <li><a class="ba" href="https://liuxunzhuo.tech" target="_blank" rel="noopener">访问主站🎉</a></li>
+        
+            <li><a class="ba" href="https://github.com/xunzhuo" target="_blank" rel="noopener">GitHub🐒</a></li>
+        
+
+            
+<script src="/libs/jquery.min.js"></script>
+
+            
+<script src="/js/search.js"></script>
+
+            
+                <form class="site-search-form">
+                    <i class="fa fa-search" id="search-logo"><input type="text" id="local-search-input" class="st-search-input" /></i>
+                </form>
+                <div id="local-search-result" class="local-search-result-cls"></div>
+            
+            <script type="text/javascript" id="local.search.active">
+                var inputArea       = document.querySelector("#local-search-input");
+                var getSearchFile = function(){
+                    var path = "/search.xml";
+                    searchFunc(path, 'local-search-input', 'local-search-result');
+                }
+                inputArea.onfocus = function(){ getSearchFile() }
+
+                var $resetButton = $("#search-form .fa-times");
+                var $resultArea = $("#local-search-result");
+
+                inputArea.oninput = function(){ $resetButton.show(); }
+                resetSearch = function(){
+                    $resultArea.html("");
+                    document.querySelector("#search-form").reset();
+                    $resetButton.hide();
+                    $(".no-result").hide();
+                }
+                inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+                //No search result
+                $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+                    if (!$(e.target).text()) {
+                        $(".no-result").show(100);
+                    } else {
+                        $(".no-result").hide();
+                    }
+                })
+            </script>
+
+    </ol>
+    <hr>
+</div>
+<div class="hd">
     
     
-    2016-2020
-    Carl000x y J4ck21
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">Inicio</a></li>
-         
-          <li><a href="/about/">Sobre Mi</a></li>
-         
-          <li><a href="/archives/">Articulos</a></li>
-         
-          <li><a href="/apuntes/">Apuntes</a></li>
-         
-          <li><a href="/search/">Buscar</a></li>
         
-      </ul>
-    </nav>
-  </div>
-</footer>
+        
+            <div class="titlex">
+                <p><span class="jing"></span><span style="color: #6d9ee7;"> 公元</span> 
+                 2020年 🕛
+                </p>
+            </div>
+            
+        
+        <a class="flink" href="/2020/06/29/Tabby/">
+            <div class="list">
+                <div class="postname">
+                    Tabby Writeup
+                </div>
+                <div class="posttime">
+                    junio 29º
+                </div>
+            </div>
+        </a>
+    
+</div>
 
-    </div>
-    <!-- styles -->
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" href="https://github.com/Xunzhuo/hexo-theme-coder" target="_blank" rel="noopener" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
 
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
 
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
-
-
-    <!-- jquery -->
-
-<script src="/lib/jquery/jquery.min.js"></script>
-
-
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-
-<!-- clipboard -->
-
-
-<script src="/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Google Analytics -->
-
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-170961162-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-<!-- Baidu Analytics -->
-
-<!-- Disqus Comments -->
+<script src="/libs/jquery.min.js"></script>
 
 
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 </body>
 </html>
