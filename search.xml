@@ -19,9 +19,7 @@
           
           <category> Hacking Web </category>
           
-          <category> RCE </category>
-          
-          <category> LFI </category>
+          <category> SSTI </category>
           
           <category> THM </category>
           
