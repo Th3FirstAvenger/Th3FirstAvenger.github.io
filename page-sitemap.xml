@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>http://teamshadowdc.github.io/404/</loc>
+        <lastmod>2020-09-28T10:25:18.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://teamshadowdc.github.io/tags/</loc>
         <lastmod>2020-09-28T10:20:17.222Z</lastmod>
         <changefreq>weekly</changefreq>
