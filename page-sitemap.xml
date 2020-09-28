@@ -8,6 +8,20 @@
     </url>
     
     <url>
+        <loc>http://teamshadowdc.github.io/tags/</loc>
+        <lastmod>2020-09-28T10:15:18.176Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/</loc>
+        <lastmod>2020-09-28T10:13:27.828Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://teamshadowdc.github.io/about/</loc>
         <lastmod>2020-09-21T16:44:42.121Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,13 +45,6 @@
     <url>
         <loc>http://teamshadowdc.github.io/search/</loc>
         <lastmod>2020-07-01T17:47:29.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/</loc>
-        <lastmod>2020-06-29T21:23:59.705Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
