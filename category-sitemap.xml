@@ -8,6 +8,69 @@
     </url>
 
     <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/evil-winrm/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Windows/</loc>
+        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Docker-Linux/</loc>
+        <lastmod>2020-10-09T09:15:05.471Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/lxd/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -94,69 +157,6 @@
     <url>
         <loc>http://teamshadowdc.github.io/categories/SSTI/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Docker-Linux/</loc>
-        <lastmod>2020-09-28T10:48:29.546Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/evil-winrm/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/</loc>
-        <lastmod>2020-09-28T10:47:14.087Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
