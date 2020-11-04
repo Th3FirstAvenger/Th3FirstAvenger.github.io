@@ -8,6 +8,34 @@
     </url>
 
     <url>
+        <loc>http://teamshadowdc.github.io/categories/Hacking-Web/SQLI/</loc>
+        <lastmod>2020-11-04T23:26:01.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/PortSwigger/</loc>
+        <lastmod>2020-11-04T23:26:01.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Hacking-Web/</loc>
+        <lastmod>2020-11-04T23:26:01.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/categories/Linux/</loc>
+        <lastmod>2020-11-04T23:26:01.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/evil-winrm/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -120,13 +148,6 @@
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/PortSwigger/</loc>
-        <lastmod>2020-09-28T10:49:03.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://teamshadowdc.github.io/categories/THM/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -135,20 +156,6 @@
 
     <url>
         <loc>http://teamshadowdc.github.io/categories/Hacking-Web/SSTI/</loc>
-        <lastmod>2020-09-28T10:49:03.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Hacking-Web/</loc>
-        <lastmod>2020-09-28T10:49:03.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/categories/Linux/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

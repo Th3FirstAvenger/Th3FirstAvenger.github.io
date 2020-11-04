@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>http://teamshadowdc.github.io/tags/SQLI/</loc>
+        <lastmod>2020-11-04T23:26:01.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://teamshadowdc.github.io/tags/Web/</loc>
+        <lastmod>2020-11-04T23:26:01.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://teamshadowdc.github.io/tags/HTB/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +39,6 @@
 
     <url>
         <loc>http://teamshadowdc.github.io/tags/THM/</loc>
-        <lastmod>2020-09-28T10:49:03.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://teamshadowdc.github.io/tags/Web/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
