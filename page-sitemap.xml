@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://th3firstavenger.github.io/about/</loc>
+        <lastmod>2020-11-04T23:52:31.637Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://th3firstavenger.github.io/tags/</loc>
         <lastmod>2020-09-28T10:20:17.222Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,13 +24,6 @@
     <url>
         <loc>https://th3firstavenger.github.io/categories/</loc>
         <lastmod>2020-09-28T10:20:04.882Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://th3firstavenger.github.io/about/</loc>
-        <lastmod>2020-09-21T16:44:42.121Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
