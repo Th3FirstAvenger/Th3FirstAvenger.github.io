@@ -48,6 +48,7 @@ a:hover {
 }
 .postname {
   float: left;
+  font-family: "Lucida Console", Courier, monospace;
 }
 .posttime {
   float: right;

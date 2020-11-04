@@ -2,13 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://teamshadowdc.github.io</loc>
+        <loc>https://th3firstavenger.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/2020/11/05/SQL_i_PART_1/</loc>
+        <loc>https://th3firstavenger.github.io/2020/11/05/SQL_i_PART_1/</loc>
         <lastmod>2020-11-04T23:26:01.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -16,7 +16,7 @@
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/2020/06/26/Blackfield/</loc>
+        <loc>https://th3firstavenger.github.io/2020/06/26/Blackfield/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -24,7 +24,7 @@
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/2020/07/03/Hackeando-con-Docker/</loc>
+        <loc>https://th3firstavenger.github.io/2020/07/03/Hackeando-con-Docker/</loc>
         <lastmod>2020-10-09T09:15:05.471Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -32,7 +32,7 @@
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/2020/06/29/Tabby/</loc>
+        <loc>https://th3firstavenger.github.io/2020/06/29/Tabby/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -40,7 +40,7 @@
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/2020/07/08/SSTI/</loc>
+        <loc>https://th3firstavenger.github.io/2020/07/08/SSTI/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

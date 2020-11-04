@@ -2,167 +2,167 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://teamshadowdc.github.io</loc>
+        <loc>https://th3firstavenger.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Hacking-Web/SQLI/</loc>
+        <loc>https://th3firstavenger.github.io/categories/PortSwigger/</loc>
         <lastmod>2020-11-04T23:26:01.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/PortSwigger/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Hacking-Web/SQLI/</loc>
         <lastmod>2020-11-04T23:26:01.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Hacking-Web/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Hacking-Web/</loc>
         <lastmod>2020-11-04T23:26:01.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Linux/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Linux/</loc>
         <lastmod>2020-11-04T23:26:01.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/evil-winrm/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/evil-winrm/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/disckshadow/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/rpcclient/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/Active-Directory/kerberos/hashcat/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/kerberos/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/Active-Directory/kerberos/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/Active-Directory/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/Active-Directory/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/HTB/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/HTB/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Windows/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Windows/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Docker-Linux/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Docker-Linux/</loc>
         <lastmod>2020-10-09T09:15:05.471Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/lxd/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/lxd/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/LFI/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/Linux/API-Tomcat/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/Linux/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/HTB/</loc>
+        <loc>https://th3firstavenger.github.io/categories/HTB/</loc>
         <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/THM/</loc>
+        <loc>https://th3firstavenger.github.io/categories/THM/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/Hacking-Web/SSTI/</loc>
+        <loc>https://th3firstavenger.github.io/categories/Hacking-Web/SSTI/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://teamshadowdc.github.io/categories/SSTI/</loc>
+        <loc>https://th3firstavenger.github.io/categories/SSTI/</loc>
         <lastmod>2020-09-28T10:49:03.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
