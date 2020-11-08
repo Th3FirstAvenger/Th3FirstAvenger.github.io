@@ -8,6 +8,55 @@
     </url>
 
     <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/lxd/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/categories/HTB/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://th3firstavenger.github.io/categories/PortSwigger/</loc>
         <lastmod>2020-11-06T12:07:02.570Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -94,55 +143,6 @@
     <url>
         <loc>https://th3firstavenger.github.io/categories/Docker-Linux/</loc>
         <lastmod>2020-10-09T09:15:05.471Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/lxd/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/fcraczip/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/ffuf/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/LFI/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/API-Tomcat/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/Linux/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/categories/HTB/</loc>
-        <lastmod>2020-09-28T10:53:06.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

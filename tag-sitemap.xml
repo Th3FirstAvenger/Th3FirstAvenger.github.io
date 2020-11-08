@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://th3firstavenger.github.io/tags/Linux/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://th3firstavenger.github.io/tags/HTB/</loc>
+        <lastmod>2020-11-08T23:03:18.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://th3firstavenger.github.io/tags/SQLI/</loc>
         <lastmod>2020-11-06T12:07:02.570Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,20 +33,6 @@
     <url>
         <loc>https://th3firstavenger.github.io/tags/Windows/</loc>
         <lastmod>2020-10-17T20:39:03.651Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/tags/HTB/</loc>
-        <lastmod>2020-10-17T20:39:03.651Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://th3firstavenger.github.io/tags/Linux/</loc>
-        <lastmod>2020-10-09T09:15:05.471Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
